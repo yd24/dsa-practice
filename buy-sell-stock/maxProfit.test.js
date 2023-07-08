@@ -1,4 +1,5 @@
 const maxProfit = require('./maxProfit');
+import {describe, test, expect} from 'vitest';
 
 describe('Testing maxProfit function', () => {
   test('Testing case where profit can be made', () => {

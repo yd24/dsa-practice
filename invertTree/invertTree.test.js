@@ -1,5 +1,6 @@
 const invertTree = require('./invertTree');
 const { Node, BinaryTree } = require('./tree/trees');
+import {describe, test, expect} from 'vitest';
 
 describe('Testing function to invert a binary tree', () => {
   test('Function can invert a binary tree', () => {

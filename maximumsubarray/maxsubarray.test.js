@@ -1,4 +1,5 @@
 const maxSumSubArray = require('./maxsubarray');
+import {describe, test, expect} from 'vitest';
 
 //assuming that the function is passed in an array of numbers that is at least length of 1.
 describe('Testing function to find maximum sum from subarrays in an array', () => {
