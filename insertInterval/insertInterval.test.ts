@@ -12,4 +12,13 @@ describe('Testing function that inserts and merges overlapping intervals', () =>
     let merged2 = mergeIntervals(arr2);
     expect(merged2).toEqual([[1, 8], [10, 12]]);
   });
+
+  test('Tests that function can insert a new interval and merge overlapping intervals', () => {
+    let arr = [[1, 2], [4, 10], [4, 6], [8, 12]];
+    let merged = insertInterval(arr, [5,8]);
+    expect(merged).toEqual([[1, 2], [4, 12]]);
+
+    merged = insertInterval(arr, [11, 13]);
+    expect(merged).toEqual([[1, 2], [4, 13]]);
+  });
 });
