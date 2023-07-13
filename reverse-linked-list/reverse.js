@@ -18,6 +18,24 @@ function reverseLinkedList(head) {
   return reversed;
 }
 
+//Solution for leetcode, which only uses ListNode objects.
+function leetCodeReverseSolution(head) {
+  let current = head;
+  if (head === null || head.next === null) {
+      return head;
+  }
+  let reversed = new ListNode(head.val);
+  current = current.next;
+  while (current !== null) {
+    let temp = reversed;
+    let newCurrent = current.next;
+    reversed = current;
+    reversed.next = temp;
+    current = newCurrent;
+  }
+  return reversed;
+}
+
 //need to draw out and fix
 /*function reverseLinkedListInPlace(list) {
   let current = list.head;
