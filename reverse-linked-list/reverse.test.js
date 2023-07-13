@@ -1,5 +1,6 @@
-const { reverseLinkedList, reverseLinkedListInPlace } = require('./reverse');
+const { reverseLinkedList } = require('./reverse');
 const { LinkedList } = require('./LinkedList');
+import { describe, test, expect } from 'vitest';
 
 describe('Testing function that reverses a Linked List', () => {
   test('Test that a Linked List can be reversed', () => {
@@ -12,18 +13,11 @@ describe('Testing function that reverses a Linked List', () => {
     expect(list.head.next.next.value).toEqual(12);
     expect(list.head.next.next.next.value).toEqual(3);
 
-    let reversed = reverseLinkedList(list);
+    let reversed = reverseLinkedList(list.head);
     expect(reversed.head.value).toEqual(3);
     expect(reversed.head.next.next.value).toEqual(5);
     expect(reversed.head.next.next.next.value).toEqual(6);
     expect(reversed.head.next.next.next.next).toBeFalsy();
-
-    //test with in place method
-    let original = reverseLinkedListInPlace(reversed);
-    expect(original.head.value).toEqual(6);
-    expect(original.head.next.next.value).toEqual(12);
-    expect(original.head.next.next.next.value).toEqual(3);
-
   });
 
   test('Test that a Linked List with two elements can be reversed', () => {
@@ -31,7 +25,7 @@ describe('Testing function that reverses a Linked List', () => {
     list.append(6);
     list.append(5);
 
-    let reversed = reverseLinkedList(list);
+    let reversed = reverseLinkedList(list.head);
     expect(reversed.head.value).toEqual(5);
     expect(reversed.head.next.value).toEqual(6);
   });
@@ -40,7 +34,13 @@ describe('Testing function that reverses a Linked List', () => {
     let list = new LinkedList();
     list.append(6);
 
-    let reversed = reverseLinkedList(list);
+    let reversed = reverseLinkedList(list.head);
     expect(reversed.head.value).toEqual(6);
+  });
+
+  test('Test that an empty Linked List is the same when reversed', () => {
+    let list = new LinkedList();
+    let reversed = reverseLinkedList(list.head);
+    expect(reversed.head).toBeFalsy();
   });
 });
