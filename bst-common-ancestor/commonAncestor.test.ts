@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import { BinarySearchTree } from './bst';
+import { TreeNode, BinarySearchTree } from './bst';
 import { commonAncestor } from './commonAncestor';
 
 describe('Testing function to find common ancestor in binary search tree', () => {
@@ -36,7 +36,10 @@ describe('Testing function to find common ancestor in binary search tree', () =>
     bst.add(3);
     bst.add(5);
 
-    let LCA = commonAncestor(bst.root, 2, 8);
-    expect(LCA.value).toEqual(6);
+    let p = new TreeNode(2);
+    let q = new TreeNode(8);
+
+    let LCA = commonAncestor(bst.root, p, q);
+    expect(LCA).toEqual(6);
   });
 });
