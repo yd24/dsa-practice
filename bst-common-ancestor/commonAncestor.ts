@@ -10,6 +10,7 @@ export function commonAncestor(root: TreeNode | null, p: TreeNode, q: TreeNode):
       current = current.left;
     } else {
       LCA = current.value;
+      break;
     }
   }
   return LCA;
