@@ -10,32 +10,11 @@ export class TreeNode {
   }
 }
 
-export class BinarySearchTree {
+export class BinaryTree {
   public root: TreeNode | null;
 
   constructor(root?: TreeNode) {
     this.root = root || null;
-  }
-
-  public add(value: number): void {
-    if (!this.root) {
-      this.root = new TreeNode(value);
-    } else {
-      this.root = this.addToTree(this.root, value);
-    }
-  }
-
-  private addToTree(node: TreeNode | null, value: number): TreeNode {
-    if (node === null) {
-      node = new TreeNode(value);
-    } else {
-      if (value > node.value) {
-        node.right = this.addToTree(node.right, value);
-      } else {
-        node.left = this.addToTree(node.left, value);
-      }
-    }
-    return node;
   }
 
   public inOrder() {
@@ -87,5 +66,28 @@ export class BinarySearchTree {
       }
     }
     return arr;
+  }
+}
+
+export class BinarySearchTree extends BinaryTree {
+  public add(value: number): void {
+    if (!this.root) {
+      this.root = new TreeNode(value);
+    } else {
+      this.root = this.addToTree(this.root, value);
+    }
+  }
+
+  private addToTree(node: TreeNode | null, value: number): TreeNode {
+    if (node === null) {
+      node = new TreeNode(value);
+    } else {
+      if (value > node.value) {
+        node.right = this.addToTree(node.right, value);
+      } else {
+        node.left = this.addToTree(node.left, value);
+      }
+    }
+    return node;
   }
 }

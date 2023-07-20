@@ -1,5 +1,5 @@
 const detectCycle = require("./linked-list-cycle");
-const { LinkedList, Node } = require("./LinkedList");
+const { LinkedList, Node } = require("../../common/LinkedList");
 import { describe, test, expect } from "vitest";
 
 describe("Testing linked list cycle detect function", () => {

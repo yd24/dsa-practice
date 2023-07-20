@@ -1,5 +1,5 @@
 const { reverseLinkedList } = require('./reverse');
-const { LinkedList } = require('./LinkedList');
+const { LinkedList } = require('../../common/LinkedList');
 import { describe, test, expect } from 'vitest';
 
 describe('Testing function that reverses a Linked List', () => {

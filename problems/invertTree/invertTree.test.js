@@ -1,17 +1,17 @@
 const invertTree = require('./invertTree');
-const { Node, BinaryTree } = require('./tree/trees');
+const { TreeNode, BinaryTree } = require('../../common/bst');
 import {describe, test, expect} from 'vitest';
 
 describe('Testing function to invert a binary tree', () => {
   test('Function can invert a binary tree', () => {
     //set up tree
-    let root = new Node(5);
-    let left = new Node(3);
-    let right = new Node(7);
-    left.left = new Node(1);
-    left.right = new Node(4);
-    right.left = new Node(6);
-    right.right = new Node(8);
+    let root = new TreeNode(5);
+    let left = new TreeNode(3);
+    let right = new TreeNode(7);
+    left.left = new TreeNode(1);
+    left.right = new TreeNode(4);
+    right.left = new TreeNode(6);
+    right.right = new TreeNode(8);
     root.left = left;
     root.right = right;
     let tree1 = new BinaryTree(root);
@@ -28,9 +28,9 @@ describe('Testing function to invert a binary tree', () => {
 
   test('Function can invert a small binary tree', () => {
     //set up tree
-    let root = new Node(2);
-    root.left = new Node(1);
-    root.right = new Node(3);
+    let root = new TreeNode(2);
+    root.left = new TreeNode(1);
+    root.right = new TreeNode(3);
     let tree = new BinaryTree(root);
 
     //check tree is correctly initialized
@@ -45,7 +45,7 @@ describe('Testing function to invert a binary tree', () => {
 
   test('Function can invert a binary tree with one element', () => {
     //set up tree
-    let root = new Node(2);
+    let root = new TreeNode(2);
     let tree = new BinaryTree(root);
 
     //check tree is correctly initialized

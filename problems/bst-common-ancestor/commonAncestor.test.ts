@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import { TreeNode, BinarySearchTree } from './bst';
+import { TreeNode, BinarySearchTree } from '../../common/bst';
 import { commonAncestor, commonAncestorRecursive } from './commonAncestor';
 
 describe('Testing function to find common ancestor in binary search tree', () => {

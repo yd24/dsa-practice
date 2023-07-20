@@ -1,4 +1,4 @@
-const { Node, LinkedList } = require('./LinkedList');
+const { Node, LinkedList } = require('../../common/LinkedList');
 
 function reverseLinkedList(head) {
   let current = head;
