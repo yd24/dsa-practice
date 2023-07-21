@@ -29,6 +29,34 @@ export class BinaryTree {
     return this.preOrderHelper(this.root, []);
   }
 
+  public breadthFirst(root: TreeNode | null): number[] {
+    if (root) {
+      return this.breadthFirstHelper(root);
+    } else {
+      return [];
+    }
+  }
+
+  private breadthFirstHelper(root: TreeNode): number[] {
+    let queue: TreeNode[] = [];
+    let arr: number[] = [];
+    queue.push(root);
+
+    while (queue.length > 0) {
+      let node = queue.shift();
+      if (node?.left) {
+        queue.push(node.left);
+      }
+      if (node?.right) {
+        queue.push(node.right);
+      }
+      if (node) {
+        arr.push(node.value);
+      }
+    }
+    return arr;
+  }
+
   private inOrderHelper(node: TreeNode | null, arr: number[]): number[] {
     if (node) {
       if (node.left) {
