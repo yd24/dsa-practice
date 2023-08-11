@@ -52,14 +52,14 @@ class MinHeap {
   }
 
   static parent(child: number): number {
-    return -1;
+    return Math.floor((child - 2) / 2);
   }
 
   static left(parent: number): number {
-    return -1;
+    return Math.floor((parent * 2) + 1);
   }
 
   static right(parent: number): number {
-    return -1;
+    return Math.floor((parent * 2) + 2);;
   }
 }
